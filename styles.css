@@ -1,0 +1,423 @@
+/* Global styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Header styling */
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Section styling */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Side menu styling */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Initially hidden off screen */
+    width: 200px;
+    height: 100%;
+    background-color: #4CAF50;
+    overflow-x: hidden;
+    transition: 0.3s ease; /* Smooth transition for the sliding effect */
+    border-left: 4px solid #0d7142; /* Persistent white vertical line */
+    z-index: 10;
+}
+
+.side-menu nav {
+    margin-top: 100px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.side-menu nav a {
+    display: block;
+    padding: 10px 0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-left: 4px solid transparent; /* Invisible border by default */
+    padding-left: 10px; /* Create space between text and line */
+    transition: border-color 0.3s ease; /* Smooth transition when hovered */
+
+}
+
+.side-menu nav a:hover {
+    background-color: #3E8E41;
+    border-left: 4px solid #ffffff; /* Show the line in white when hovered */
+}
+
+/* Menu icon (hamburger) */
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 11; /* Ensure it's above the menu */
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+    
+}
+
+/* Hover effect to slide the menu */
+.menu-icon:hover ~ .side-menu,
+.side-menu:hover {
+    left: 0; /* Slide the menu in when hovering over the icon or menu itself */
+}
+
+/* Keep menu open when hovering over it */
+.side-menu:hover {
+    left: 0; /* Keep the menu visible when hovering over it */
+}
+
+/* Styling for the header with a background image */
+/* Ensure the menu is above the header */
+
+
+/* Styling for the header with a background image */
+.hero-header {
+    background-image: url('https://ceus.indiana.edu/images/about/turkey.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+/* Inner div that handles the background zoom */
+.hero-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    z-index: -1; /* Ensure the zoomed background stays behind the text */
+    transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+    transform: scale(1); /* Default scale */
+}
+
+/* Zoom-out effect on hover */
+.hero-header:hover::before {
+    transform: scale(1.2); /* Zooms the background image out to 90% */
+}
+
+.intro-section {
+    display: flex;
+    flex-direction: row-reverse; /* This will place the image on the right and text on the left */
+    align-items: center;
+    padding: 20px;
+    text-align: left;
+}
+
+.intro-section img {
+    max-width: 300px;
+    height: auto;
+    margin-left: 20px; /* Space between image and text */
+}
+
+.intro-text {
+    flex: 1; /* Take up the remaining space */
+    margin-right: 20px;
+}
+
+
+
+
+.content-section {
+    padding: 100px; /* Space around the content */
+    background-color: #f9f9f9; /* Light background color for the content section */
+    margin-top: 2px; /* Space between the header and content section */
+}
+
+.custom-content {
+    display: flex; /* Use Flexbox to align items side by side */
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Space between image and text */
+}
+
+.image-container {
+    flex: 1; /* Take up 1 part of the space */
+}
+
+/* Flexbox layout for content wrapper */
+.content-wrapper {
+    display: flex; /* Use Flexbox to arrange children in a row */
+    align-items: center; /* Align items vertically center */
+}
+
+/* Image styling */
+.content-image {
+    width: 500px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between the image and the description */
+    transition: transform 0.5s ease; /* Smooth transition for movement */
+}
+
+/* Description styling */
+.content-description {
+    color: #666;
+    font-family: Georgia, serif;
+    flex: 1; /* Allow description to take up the remaining space */
+}
+
+.content-section:hover .content-image {
+    transform: translateX(20px); /* Moves the image 20 pixels to the right */
+}
+
+
+
+.about-kazakhstan {
+    text-align: center; /* Center the text */
+    padding: 100px; /* Space around the section */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.info-section {
+    display: flex; /* Use Flexbox for layout */
+    flex-wrap: wrap; /* Wrap items to the next line if necessary */
+    justify-content: space-around; /* Space items evenly */
+}
+
+.info-item {
+    flex: 1;
+    margin: 10px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center;  /* Center the text below the image */
+    border: 2px solid #333; /* Solid border around the section */
+    border-radius: 8px; /* Optional: Rounded corners */
+    padding: 15px; /* Optional: Adds some space between the border and the content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
+}
+
+.info-image {
+    width: 100%;
+    height: 200px; /* Limit height to keep things consistent */
+    object-fit: cover; /* Ensure images are covered properly */
+    border-radius: 6px;
+    
+}
+
+.info-item:hover{
+    transform: scale(1.1); /* Zoom in on hover */
+}
+
+.info-text {
+    margin-top: 15px; /* Adds space between the image and the text */
+}
+
+
+h1 {
+    
+    font-size: 2em; /* Size of the main heading */
+    margin-bottom: 50px; /* Space below heading */
+}
+
+h2 {
+    font-size: 1.5em; /* Size of section headings */
+    margin: 30px 0; /* Space above and below */
+}
+
+
+
+.Turkey {
+    background-image: url('https://ptimages.s3.eu-west-2.amazonaws.com/img/media_photos/turkish_flag-jpg.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Enviroment {
+    background-image: url('https://cdn.britannica.com/68/198168-050-16D23B84/Cove-port-coast-Black-Sea-Turkey-Amasra.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Political {
+    background-image: url('https://idsb.tmgrup.com.tr/ly/uploads/images/2021/03/08/98365.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Personality {
+    background-image: url('https://idsb.tmgrup.com.tr/2015/11/06/GenelBuyuk/1446752211242_rs.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Culture {
+    background-image: url('https://visitturkey.in/wp-content/uploads/2024/07/exploring-turkish-culture-a-comprehensive-guide.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Sport {
+    background-image: url('https://e0.365dm.com/19/06/2048x1152/skysports-turkey-football-iceland_4691620.jpg?20190610161837');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Language {
+    background-image: url('https://www.lebanesearabicinstitute.com/wp-content/uploads/2017/02/Alphabet.jpg');
+    background-size: cover;
+    background-position: center;
+    color: black;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Economy {
+    background-image: url('https://s.wsj.net/public/resources/images/OG-BP540_201808_M_20180803105857.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Religion {
+    background-image: url('https://cdn-live.foreignaffairs.com/sites/default/files/styles/x_large_1x/public/public-assets/images/articles/2019/01/10/tolpic.jpg?itok=7fEjIgDc');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.History {
+    background-image: url('https://warfarehistorynetwork.com/wp-content/uploads/2016/11/W-TopSecret-1-HT-May12-crop.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 2.5em;
+    z-index: 1; /* Lower z-index to ensure it is behind the menu */
+}
+
+.Turkey-section {
+    padding: 30px; /* Space around the content */
+    background-color: #f9f9f9; /* Light background color for the content section */
+    margin-top: 2px; /* Space between the header and content section */
+}
+
+.Turkey-content {
+    display: flex; /* Use Flexbox to align items side by side */
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Space between image and text */
+}
+
+.Turkey-container {
+    flex: 1; /* Take up 1 part of the space */
+}
+
+/* Flexbox layout for content wrapper */
+.Turkey-wrapper {
+    display: flex; /* Use Flexbox to arrange children in a row */
+    align-items: center; /* Align items vertically center */
+}
+
+/* Image styling */
+.Turkey-image {
+    width: 500px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between the image and the description */
+}
+
+/* Description styling */
+.Turkey-description {
+    color: #666;
+    font-family: Georgia, serif;
+    font-size: 27px;
+    flex: 1; /* Allow description to take up the remaining space */
+    text-align: left;
+    margin: 50px;
+}
+
+.learn-more-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn:hover {
+    background-color: #45a049;
+}
