@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Menu Icon and Side Menu -->
+    <div class="menu-bar">
+        <div class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="side-menu">
+            <nav>
+
+                <a href="Turkey.html">Turkey</a>
+                <a href="Enviroment.html">Enviroment</a>
+                <a href="Government.html">Government</a>
+                <a href="People.html">People</a>
+                <a href="Culture.html">Culture</a>
+                <a href="sport.html">Football</a>
+                <a href="language.html">Language</a>
+                <a href="economy.html">Economy</a>
+                <a href="religion.html">Religion</a>
+                <a href="History.html">WWII History</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Header with Zoom Background -->
+    <header class="hero-header">
+        <h1>TurKEY</h1>
+    </header>
+
+    <!-- Content Section Below the Header -->
+    <section class="content-section">
+        <div class="content-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Turkey_Turkish_dialects_map_%28Main_subgroups%29_en.jpg"
+                alt="Description of image" class="content-image">
+
+            <div class="content-description">
+                <h2>Also known as: Republic of Turkey, Türkiye Cumhuriyeti</h2>
+                <p>Turkey, country that occupies a unique geographic position, lying partly in Asia and partly in
+                    Europe. Throughout its history it has acted as both a barrier and a bridge between the two
+                    continents.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-kazakhstan">
+        <h1>LEARN MORE ABOUT TURKEY</h1>
+
+        <div class="intro-section">
+            <img src="https://cdn.britannica.com/83/4783-050-683BDB29/Turkey-map-boundaries-cities-locator.jpg?w=300" alt="Map of Turkey">
+            <div class="intro-text">
+            <h2>INTRODUCTION TO TURKEY</h2>
+            <p> Turkey is situated at the crossroads of the Balkans, Caucasus, Middle East, and eastern Mediterranean. It
+                is among the larger countries of the region in terms of territory and population, and its land area is
+                greater than that of any European state. Nearly all of the country is in Asia, comprising the oblong
+                peninsula of Asia Minor—also known as Anatolia (Anadolu)—and, in the east, part of a mountainous region
+                sometimes known as the Armenian Highland. The remainder—Turkish Thrace (Trakya)—lies in the extreme
+                southeastern part of Europe, a tiny remnant of an empire that once extended over much of the Balkans.
+            </p>
+            
+        </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-item">
+                <a href="Enviroment.html">
+                    <img src="https://cdn.britannica.com/95/5395-050-EFC8AB0B/City-Afyonkarahisar-volcanic-rock-Turkey-cone.jpg"
+                        alt="Kazakhstan Environment" class="info-image"></a>
+                <h2>ENVIRONMENT</h2>
+                <p>Turkey is a predominantly mountainous country, and true lowland is confined to the coastal fringes.
+                    About one-fourth of the surface has an elevation above 4,000 feet</p>
+            </div>
+
+            <div class="info-item">
+                <a href="Government.html">
+                    <img src="https://cdn.britannica.com/82/4782-004-4119489D/Flag-Turkey.jpg"
+                        alt="Kazakhstan Political Leader" class="info-image"></a>
+                <h2>Government and society</h2>
+                <p>Turkey’s provinces are administered by governors, who are appointed by the Council of Ministers,
+                    subject to the approval of the president. Provinces are divided into districts and subdistricts.</p>
+            </div>
+
+            <div class="info-item">
+                <a href="People.html">
+                    <img src="https://www.seemypersonality.com/images/my-personality.webp" alt="Kazakh Personality"
+                        class="info-image"></a>
+                <h2>People</h2>
+                <p>According to the Turkish constitution, the word “Turk,” as a political term, includes all citizens
+                    of the Republic of Turkey</p>
+            </div>
+        </div>
+    </section>
+
+    <div style="text-align: center; margin-top: 50px;">
+        <button id="learn-more-btn" class="learn-more-btn">Learn More</button>
+    </div>
+
+
+    <script>
+        document.getElementById("learn-more-btn").addEventListener("click", function () {
+            // Show the menu
+            document.querySelector(".side-menu").style.left = "0";
+
+            // Hide the menu after 5 seconds
+            setTimeout(function () {
+                document.querySelector(".side-menu").style.left = "-200px"; // Hide the menu
+
+                // Re-enable hover functionality after hiding
+                document.querySelector(".side-menu").addEventListener("mouseover", function () {
+                    document.querySelector(".side-menu").style.left = "0";
+                });
+                document.querySelector(".side-menu").addEventListener("mouseleave", function () {
+                    document.querySelector(".side-menu").style.left = "-200px";
+                });
+            }, 5000); // 5 seconds
+        });
+    </script>
+
+
+
+</body>
+
+</html>
